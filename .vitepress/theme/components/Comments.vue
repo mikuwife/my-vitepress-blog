@@ -1,0 +1,34 @@
+<template>
+  <div id="gitalk-container"></div>
+</template>
+<script lang="ts" setup>
+import "gitalk/dist/gitalk.css";
+import Gitalk from "gitalk";
+import { onContentUpdated, useRouter } from "vitepress";
+
+// const { route, go } = useRouter();
+function deleteChild() {
+  const element = document.querySelector("#gitalk-container");
+  let child = element?.lastElementChild;
+  while (child) {
+    element?.removeChild(child);
+    child = element?.lastElementChild;
+  }
+}
+onContentUpdated(() => {
+  // reset gittalk element for update
+  deleteChild();
+  const gitalk = new Gitalk({
+    clientID: "7f05c2aba7b3ec34c88e",
+    clientSecret: "4bbf89e6acdb5a466b3cd35bb529e66229f28b36",
+    repo: "blogtalk",
+    owner: "mikuwife",
+    admin: ["mikuwife"],
+    id: location.pathname.substring(0, 50), // Ensure uniqueness and length less than 50
+    language: "zh-CN",
+    distractionFreeMode: true, // Facebook-like distraction free mode
+  });
+  gitalk.render("gitalk-container");
+});
+</script>
+<style scoped></style>
