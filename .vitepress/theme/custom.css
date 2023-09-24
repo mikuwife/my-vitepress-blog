@@ -44,3 +44,7 @@
 .VPDocOutlineDropdown {
   display: none !important;
 }
+
+.gt-container .gt-header-textarea {
+  color: black;
+}
