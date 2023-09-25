@@ -64,10 +64,10 @@ async function config() {
           text: "📃Archives",
           link: "/archives",
         },
-        // {
-        //   text: "🔥RSS",
-        //   link: "https://clark-cui.top/feed.xml",
-        // },
+        {
+          text: "🔥About",
+          link: "/about",
+        },
       ],
       socialLinks: [
         { icon: "github", link: "https://github.com/mikuwife" },
