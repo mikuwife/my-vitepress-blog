@@ -81,9 +81,9 @@ async function config() {
           link: "mailto:2514425607@qq.com",
         },
       ],
-      // outline: 2, //设置右侧aside显示层级
+      outline: 2, //设置右侧aside显示层级
       aside: false,
-      showFireworksAnimation: true,
+      showFireworksAnimation: false,
     },
     buildEnd: buildBlogRSS,
     markdown: {
